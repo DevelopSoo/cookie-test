@@ -1,4 +1,7 @@
-import { ThemeProvider } from "@/providers/ThemeProvider";
+// app/layout.tsx
+"use client";
+
+import LazyMotionProvider from "@/providers/LazyMotionProvider";
 import "./globals.css";
 
 export default function RootLayout({
@@ -9,7 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <LazyMotionProvider>{children}</LazyMotionProvider>
       </body>
     </html>
   );
