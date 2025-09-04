@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "motion/react";
+import * as m from "motion/react-m";
 
 export default function StartPage({ onStart }: { onStart: () => void }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       animate={{
         opacity: 1,
@@ -15,7 +15,7 @@ export default function StartPage({ onStart }: { onStart: () => void }) {
       }}
       className="text-center"
     >
-      <motion.h1
+      <m.h1
         initial={{
           scale: 0,
         }}
@@ -29,8 +29,8 @@ export default function StartPage({ onStart }: { onStart: () => void }) {
         className="mb-8 text-4xl font-bold"
       >
         MBTI 테스트
-      </motion.h1>
-      <motion.button
+      </m.h1>
+      <m.button
         whileHover={{
           scale: 1.1,
         }}
@@ -41,7 +41,7 @@ export default function StartPage({ onStart }: { onStart: () => void }) {
         className="rounded-lg bg-blue-500 px-6 py-3 text-lg text-white"
       >
         시작하기
-      </motion.button>
-    </motion.div>
+      </m.button>
+    </m.div>
   );
 }

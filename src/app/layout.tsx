@@ -1,5 +1,4 @@
 // app/layout.tsx
-"use client";
 
 import LazyMotionProvider from "@/providers/LazyMotionProvider";
 import "./globals.css";

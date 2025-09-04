@@ -1,23 +1,9 @@
-"use client";
+import ScrollProgressCircle from "@/components/ScrollProgressCircle";
 
-import * as m from "motion/react-m";
-
-export default function MyComponent() {
+export default function Home() {
   return (
-    <m.div
-      initial={{
-        opacity: 0,
-        y: 20,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-      }}
-      transition={{
-        duration: 0.5,
-      }}
-    >
-      dd
-    </m.div>
+    <div className="h-[400dvh] w-screen">
+      <ScrollProgressCircle />
+    </div>
   );
 }
