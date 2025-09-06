@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function Home() {
   useEffect(() => {
     const getCookie = async () => {
-      const res = await fetch(`${process.env.API_URL}/api/cookie`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cookie`, {
         // 요청 시 쿠키 포함
         credentials: "include",
       });
@@ -21,11 +21,14 @@ export default function Home() {
       <button
         onClick={() => {
           const setCookie = async () => {
-            const res = await fetch(`${process.env.API_URL}/api/cookie`, {
-              method: "POST",
-              // 요청 시 쿠키 포함
-              credentials: "include",
-            });
+            const res = await fetch(
+              `${process.env.NEXT_PUBLIC_API_URL}/api/cookie`,
+              {
+                method: "POST",
+                // 요청 시 쿠키 포함
+                credentials: "include",
+              },
+            );
             const data = await res.json();
             console.log("쿠키: ", data);
           };
