@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>로그인 페이지3</h1>
+      <h1>로그인 페이지2</h1>
       <input
         type="text"
         placeholder="아이디"
