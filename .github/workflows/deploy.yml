@@ -13,14 +13,20 @@ jobs:
     steps:
       - name: SSH로 EC2 접속하기
         uses: appleboy/ssh-action@v1
+        env:
+          # ENV라는 변수에 github secrets에 저장된 ENV 값을 넣어준다.
+          ENV: ${{ secrets.ENV }}
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PEM_KEY }}
+          envs: ENV
           script: |
             set -e
             cd /home/ubuntu/cookie-test
+            rm -rf .env
             git pull origin main
+            echo "$ENV" >> .env
             pm2 kill
             npm ci
             npm run build
